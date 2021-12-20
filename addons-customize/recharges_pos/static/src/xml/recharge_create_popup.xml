@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	<t t-name="RechargeCreatePopup" owl="1">
+		<t>
+			<div role="dialog" class="modal-dialog">
+				<div class="popup" style="background-color:white ;max-width:50% !important;">
+					<p class="title" style="background-color:#005B56; color:white;">
+						<t t-esc="props.title" />
+					</p>
+					<div class="body" id="listBody" style="display:flex; flex-wrap:wrap; float:left; overflow-y: auto; height: 450px; padding: 0.5rem;">
+
+						<t t-foreach="productos" t-as="producto">
+							<div style="border-radius: 50%; width:145px; height:145px; box-shadow:0px 0px 10px 5px grey; margin: 1rem 1rem; display:flex;align-items: center;justify-content:center " t-on-click="showSaleForm(producto)">
+								<img t-att-src="producto.image" style="border-radius: 50%; width:145px; height:100px"/>
+
+							</div>
+						</t>
+
+					</div>
+					<div class="footer" style="display: flex;justify-content: center;background-color: #005B56">
+						<div class="button cancel" style="background-color: white;color: black;" t-on-click="confirm">
+							<t t-esc="props.cancelText" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</t>
+	</t>
+</templates>
